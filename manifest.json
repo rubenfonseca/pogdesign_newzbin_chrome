@@ -1,0 +1,13 @@
+{
+  "name": "Pogdesign newzbin",
+  "version": "1.0.0",
+  "description": "Add newzbin download icons to pogdesign tv series calendar",
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.pogdesign.co.uk/cat/*"],
+      "css": ["mystyles.css"],
+      "js": ["jquery.js", "script.js"]
+    }
+  ]
+}
