@@ -1,0 +1,9 @@
+h1. Chrome extension
+
+Adds newzbin (http://newzbin.com) download icons to pogdesign tv series calendar (http://www.pogdesign.co.uk/cat/index.php).
+
+This is my first Google Chrome extension, and a direct port of my "previous greasemonkey userscript":http://userscripts.org/scripts/show/62189
+
+Chrome Extension link: https://chrome.google.com/extensions/detail/lgofnehkjileifdhnmhdcgjflhnfpbkm
+
+!http://0x82.blog.s3.amazonaws.com/10012010/pogdesign_chrome.png!
