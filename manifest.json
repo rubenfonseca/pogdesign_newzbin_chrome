@@ -1,13 +1,25 @@
 {
   "name": "Pogdesign newzbin",
-  "version": "1.0.0",
-  "description": "Add newzbin download icons to pogdesign tv series calendar",
+  "version": "2.0.0",
+  "description": "Add newzbin or nzbmatrix download icons to pogdesign tv series calendar",
+  "background_page": "background.html",
 
   "content_scripts": [
     {
       "matches": ["http://www.pogdesign.co.uk/cat/*"],
       "css": ["mystyles.css"],
-      "js": ["jquery.js", "script.js"]
+      "js": ["jquery.js", "script.js"],
+      "run_at": "document_end"
     }
+  ],
+  
+  "page_action": {
+    "default_icon": "nzb.png",
+    "default_title": "Enable Newzbin|NZBMatrix links",
+    "popup": "popup.html"
+  },
+  
+  "permissions": [
+    "tabs"
   ]
 }

@@ -1,0 +1,23 @@
+<script>
+  var type = localStorage['type'] || 'newzbin';
+  var currentTabId = null;
+
+  function checkForValidUrl(tabId, changeInfo, tab) {
+    if(tab.url.match(/pogdesign/)) {
+      chrome.pageAction.show(tabId);
+      chrome.tabs.sendRequest(tabId, {type: type}, null);
+      currentTabId = tabId;
+    }
+  }
+  
+  function setType(new_type) {
+    type = new_type;
+    localStorage['type'] = new_type;
+    chrome.tabs.sendRequest(currentTabId, {type: type}, null);
+  }
+  
+  chrome.tabs.onUpdated.addListener(checkForValidUrl);
+  chrome.tabs.onSelectionChanged(function(tabId, changeInfo, tab) {
+    currentTabId = tabId;
+  });
+</script>

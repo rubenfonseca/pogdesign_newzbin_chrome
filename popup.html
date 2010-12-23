@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    
+    <style>
+      #options {
+        width: 120px;
+        height: 120px;
+      }
+    </style>
+    
+    <script src="jquery.js"></script>
+    <script>
+      $(function() {
+        var type = chrome.extension.getBackgroundPage().type;
+        $('#' + type).attr('checked', 'checked');
+        
+        $('#newzbin, #nzbmatrix').click(function() {
+          var element = $(this);
+          
+          chrome.extension.getBackgroundPage().setType(element.attr('id'));
+          window.close();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="options">
+      <p>Choose your destiny:</p>
+      
+      <input type="radio" name="type" value="newzbin" id="newzbin">Newzbin</input>
+      <br />
+      <input type="radio" name="type" value="nzbmatrix" id="nzbmatrix">NZBMatrix</input>
+    </div>
+  </body>
+</html>
